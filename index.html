@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Redesign</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .left-body, .right-body {
+            border-radius: 15px;
+            background-color: #1e1e1e;
+        }
+        .left-body {
+            position: fixed;
+            top: 30px;
+            left: 20px;
+            width: 18%;
+            height: calc(100% - 60px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .right-body {
+            margin-left: calc(18% + 50px);
+            margin-top: 30px;
+            margin-right: 20px;
+            height: 572px;
+            border-radius: 15px;
+            padding: 15px;
+        }
+        .left-body img {
+            width: 22px;
+            height: auto;
+        }
+        .right-body img {
+            width: 22px;
+            height: auto;
+        }
+        .icon-bar {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #2e2e2e;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .icon-bar img {
+            margin-right: 10px;
+        }
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        .dropdown-menu .option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .dropdown-menu .option:hover {
+            background-color: #3e3e3e;
+        }
+        .pill-bar {
+            justify-content: center;
+            margin: 5px 0;
+        }
+        .input-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2e2e2e;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        h4, small {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-body">
+        <div>
+            <div class="icon-bar">
+                <img src="assets/icons/logo.png" alt="Icon">
+                <span>ChatGPT</span>
+            </div>
+            <div class="icon-bar">
+                <img src="assets/icons/explore.png" alt="Icon">
+                <span>Explore GPT's</span>
+            </div>
+        </div>
+        <div>
+            <div class="icon-bar">
+                <img src="assets/icons/upgrade.png" alt="Icon">
+                <div>
+                    <span>Upgrade Your plan</span><br>
+                    <small>Access more models!</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-body">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <span>ChatGPT</span>
+                <img src="assets/icons/dropdown.png" alt="DropDown">
+            </div>
+            <div>
+                <img src="assets/icons/account.png" alt="Account">
+            </div>
+        </div>
+        <h4>Ask Me anything!</h4>
+        <div class="input-bar">
+            <div>
+                <img src="assets/icons/attach.png" alt="Attach">
+                <img src="assets/icons/tools.png" alt="Tools" id="dropdown-trigger">
+                <img src="assets/icons/web.png" alt="Web">
+            </div>
+            <img src="assets/icons/voice.png" alt="Voice">
+        </div>
+        <div id="dropdown" class="dropdown-menu">
+            <div class="option">
+                <img src="#" alt="OptionIcon">
+                <span>Picture</span>
+                <img src="#" alt="RightIcon">
+            </div>
+            <div class="option">
+                <img src="#" alt="OptionIcon">
+                <span>Search</span>
+                <img src="#" alt="RightIcon">
+            </div>
+            <div class="option">
+                <img src="#" alt="OptionIcon">
+                <span>Canvas</span>
+                <img src="#" alt="RightIcon">
+            </div>
+        </div>
+        <div class="pill-bar"><img src="assets/icons/image.png" alt="PillIcon"><span>Create image</span></div>
+        <div class="pill-bar"><img src="assets/icons/summarize.png" alt="PillIcon"><span>Summarize text</span></div>
+        <div class="pill-bar"><img src="assets/icons/surprise.png" alt="PillIcon"><span>Surprise Me</span></div>
+        <div class="pill-bar"><img src="assets/icons/code.png" alt="PillIcon"><span>Code</span></div>
+        <div class="pill-bar"><img src="assets/icons/more.png" alt="PillIcon"><span>More</span></div>
+        <small>ChatGPT can make mistakes, please check important information!</small>
+    </div>
+
+    <script>
+        const dropdownTrigger = document.getElementById('dropdown-trigger');
+        const dropdown = document.getElementById('dropdown');
+        dropdownTrigger.addEventListener('click', () => {
+            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
